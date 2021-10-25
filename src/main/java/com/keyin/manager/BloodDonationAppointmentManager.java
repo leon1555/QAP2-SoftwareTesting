@@ -14,7 +14,7 @@ public class BloodDonationAppointmentManager {
         this.database = database;
     }
 
-    public BloodDonationAppointment bookAppointment(BloodDonor bloodDonor) {
+    public BloodDonationAppointment bookAppointment(int bloodDonorId) {
         BloodDonationAppointment bloodDonationAppointment = new BloodDonationAppointment();
 
         List<AppointmentSlot> appointmentSlotList = database.getAppointmentSlots();
