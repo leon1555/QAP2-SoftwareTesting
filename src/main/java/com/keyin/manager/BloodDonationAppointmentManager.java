@@ -19,6 +19,8 @@ public class BloodDonationAppointmentManager {
 
         List<AppointmentSlot> appointmentSlotList = database.getAppointmentSlots();
 
+
+
         for (AppointmentSlot appointmentSlot: appointmentSlotList) {
 
         }

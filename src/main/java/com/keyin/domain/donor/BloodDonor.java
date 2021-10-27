@@ -1,6 +1,6 @@
 package com.keyin.domain.donor;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class BloodDonor {
     /*
@@ -16,10 +16,10 @@ public class BloodDonor {
     private int id;
     private String firstName;
     private String lastName;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
     private String bloodType;
-    private Date nextAppointmentDate;
-    private Date lastDonationDate;
+    private LocalDate nextAppointmentDate;
+    private LocalDate lastDonationDate;
 
     public int getId() {
         return id;
@@ -45,11 +45,11 @@ public class BloodDonor {
         this.lastName = lastName;
     }
 
-    public Date getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -61,19 +61,19 @@ public class BloodDonor {
         this.bloodType = bloodType;
     }
 
-    public Date getNextAppointmentDate() {
+    public LocalDate getNextAppointmentDate() {
         return nextAppointmentDate;
     }
 
-    public void setNextAppointmentDate(Date nextAppointmentDate) {
+    public void setNextAppointmentDate(LocalDate nextAppointmentDate) {
         this.nextAppointmentDate = nextAppointmentDate;
     }
 
-    public Date getLastDonationDate() {
+    public LocalDate getLastDonationDate() {
         return lastDonationDate;
     }
 
-    public void setLastDonationDate(Date lastDonationDate) {
+    public void setLastDonationDate(LocalDate lastDonationDate) {
         this.lastDonationDate = lastDonationDate;
     }
 }
