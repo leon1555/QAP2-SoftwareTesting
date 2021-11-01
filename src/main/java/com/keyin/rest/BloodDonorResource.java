@@ -9,7 +9,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 @Path("/blood_donor")
-@Produces("application/json")
 public class BloodDonorResource {
     private Database database = new Database();
 
@@ -17,6 +16,7 @@ public class BloodDonorResource {
 
     @GET
     @Path("/{id}")
+    @Produces("application/json")
     public BloodDonor getBloodDonor(@PathParam("id") int id) {
         return database.getDonor(id);
     }

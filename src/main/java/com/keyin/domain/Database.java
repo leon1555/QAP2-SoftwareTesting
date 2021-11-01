@@ -16,7 +16,7 @@ public class Database {
         AppointmentSlot appointmentSlot = new AppointmentSlot();
         appointmentSlot.setId(1);
         appointmentSlot.setLocation("123 Water St. st. John's NL");
-
+        appointmentSlot.setBloodType("A");
         appointmentSlots.add(appointmentSlot);
 
         return appointmentSlots;
