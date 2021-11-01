@@ -118,36 +118,36 @@ public class BloodDonationAppointmentManagerTest {
 
 
     }
-//
-//    @Test
-//    public void testBloodDonorInvalidType() {
-//        BloodDonor bloodDonorInValidBloodType = new BloodDonor(137, "Count", "Frightenstein",
-//                LocalDate.of(1770, Month.OCTOBER, 31), "Bat Blood");
-//
-//        Mockito.when(mockDatabase.getDonor(137)).thenReturn(
-//                bloodDonorInValidBloodType
-//        );
-//
-//        ArrayList<AppointmentSlot> appointmentSlots = new ArrayList<AppointmentSlot>();
-//
-//        AppointmentSlot appointmentSlot1 = new AppointmentSlot(1, "Billy Van's Totally Legit Clinic",
-//                LocalDate.of(2021, Month.NOVEMBER, 29), LocalTime.of(11, 0), LocalTime.of(11, 30), "AB negative");
-//        AppointmentSlot appointmentSlot2 = new AppointmentSlot(2, "Billy Van's Totally Legit Clinic",
-//                LocalDate.of(2021, Month.NOVEMBER, 29), LocalTime.of(11, 15), LocalTime.of(11, 45), "O positive");
-//        AppointmentSlot appointmentSlot3 = new AppointmentSlot(3, "Billy Van's Totally Legit Clinic",
-//                LocalDate.of(2021, Month.NOVEMBER, 29), LocalTime.of(11, 30), LocalTime.of(12, 00), "O negative");
-//
-//        Mockito.when(mockDatabase.getAppointmentSlots()).thenReturn(appointmentSlots);
-//
-//        BloodDonationAppointmentManager bloodDonationAppointmentManager =
-//                new BloodDonationAppointmentManager(mockDatabase);
-//
-//        try {
-//            BloodDonationAppointment bloodDonationAppointment = bloodDonationAppointmentManager.bookAppointment(137);
-//        } catch (InvalidDonationSchedulingException e) {
-//            Assertions.assertTrue(e.getMessage().equals("No appointments available for this blood type."));
-//        }
-//
-////        Assertions.fail("Did not hit expected Exception!");
-//    }
+
+    @Test
+    public void testBloodDonorInvalidType() {
+        BloodDonor bloodDonorInValidBloodType = new BloodDonor(137, "Count", "Frightenstein",
+                LocalDate.of(1770, Month.OCTOBER, 31), "Bat Blood");
+
+        Mockito.when(mockDatabase.getDonor(137)).thenReturn(
+                bloodDonorInValidBloodType
+        );
+
+        ArrayList<AppointmentSlot> appointmentSlots = new ArrayList<AppointmentSlot>();
+
+        AppointmentSlot appointmentSlot1 = new AppointmentSlot(1, "Billy Van's Totally Legit Clinic",
+                LocalDate.of(2021, Month.NOVEMBER, 29), LocalTime.of(11, 0), LocalTime.of(11, 30), "AB negative");
+        AppointmentSlot appointmentSlot2 = new AppointmentSlot(2, "Billy Van's Totally Legit Clinic",
+                LocalDate.of(2021, Month.NOVEMBER, 29), LocalTime.of(11, 15), LocalTime.of(11, 45), "O positive");
+        AppointmentSlot appointmentSlot3 = new AppointmentSlot(3, "Billy Van's Totally Legit Clinic",
+                LocalDate.of(2021, Month.NOVEMBER, 29), LocalTime.of(11, 30), LocalTime.of(12, 00), "O negative");
+
+        Mockito.when(mockDatabase.getAppointmentSlots()).thenReturn(appointmentSlots);
+
+        BloodDonationAppointmentManager bloodDonationAppointmentManager =
+                new BloodDonationAppointmentManager(mockDatabase);
+
+        try {
+            BloodDonationAppointment bloodDonationAppointment = bloodDonationAppointmentManager.bookAppointment(137);
+        } catch (InvalidDonationSchedulingException e) {
+            Assertions.assertTrue(e.getMessage().equals("No appointments available for this blood type."));
+        }
+
+//        Assertions.fail("Did not hit expected Exception!");
+    }
 }
