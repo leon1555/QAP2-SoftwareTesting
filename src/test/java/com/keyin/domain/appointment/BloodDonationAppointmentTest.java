@@ -17,7 +17,8 @@ public class BloodDonationAppointmentTest {
             LocalDate.of(2021, Month.NOVEMBER, 29), LocalTime.of(11, 15),
             LocalTime.of(11, 45), "O positive");
 
-    BloodDonationAppointment appointment = new BloodDonationAppointment("O positive", false, 99);
+    BloodDonationAppointment appointment = new BloodDonationAppointment();
+    appointment.setDonorId();
     
 
 }
