@@ -17,6 +17,7 @@ public class BloodDonationAppointment {
 
     }
 
+
     public BloodDonationAppointment(String bloodType, boolean firsttimeDonor, int donorId) {
         this.bloodType = bloodType;
         this.firsttimeDonor = firsttimeDonor;

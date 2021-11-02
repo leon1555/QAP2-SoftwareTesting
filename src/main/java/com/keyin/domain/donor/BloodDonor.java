@@ -48,12 +48,6 @@ public class BloodDonor {
         this.lastDonationDate = null;
     }
 
-    public String toString() {
-        return "Blood Donor. ID: " + id + ", First name: " + firstName + ", Last name: " + lastName + "Date of birth: "
-                + dob + ", Blood type: " + bloodType + "Next appointment: " + nextAppointmentDate
-                + ", Last donation date: " + lastDonationDate;
-    }
-
     public long getAge() {
         LocalDate today = LocalDate.now();
         long age = YEARS.between(dob, today);
@@ -114,5 +108,11 @@ public class BloodDonor {
 
     public void setLastDonationDate(LocalDate lastDonationDate) {
         this.lastDonationDate = lastDonationDate;
+    }
+
+    public String toString() {
+        return "Blood Donor. ID: " + id + ", First name: " + firstName + ", Last name: " + lastName + "Date of birth: "
+                + dob + ", Blood type: " + bloodType + "Next appointment: " + nextAppointmentDate
+                + ", Last donation date: " + lastDonationDate;
     }
 }
