@@ -66,6 +66,7 @@ public class BloodDonationAppointmentManager {
                 }
             }
             if (bloodDonationAppointment.getStartTime() == null) {
+                System.out.println(bloodDonationAppointment);
                 throw new InvalidDonationSchedulingException("No appointments available for this blood type.");
             }
         }
