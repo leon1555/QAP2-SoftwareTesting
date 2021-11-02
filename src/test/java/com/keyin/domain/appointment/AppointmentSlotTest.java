@@ -10,6 +10,6 @@ public class AppointmentSlotTest {
                 LocalDate.of(2021, Month.NOVEMBER, 29), LocalTime.of(12, 0),
                 LocalTime.of(12, 30), "AB negative");
 
-        System.out.println(appointmentSlot5.toString());
+        System.out.println(appointmentSlot5);
     }
 }

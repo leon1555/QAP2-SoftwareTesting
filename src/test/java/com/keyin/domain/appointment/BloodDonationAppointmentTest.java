@@ -31,13 +31,14 @@ public class BloodDonationAppointmentTest {
         appointment.setEndTime(appointmentSlot2.getEndTime());
         appointment.setLocation(appointmentSlot2.getLocation());
         boolean firsttimer;
-        if(testDonor.getLastDonationDate() != null) {
+        if(testDonor.getLastDonationDate() == null) {
             firsttimer = true;
         } else {
             firsttimer = false;
         }
         appointment.setFirsttimeDonor(firsttimer);
-        System.out.println(appointment.toString());
+        System.out.println(testDonor);
+        System.out.println(appointment);
 
     }
 

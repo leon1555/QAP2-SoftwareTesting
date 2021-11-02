@@ -92,4 +92,5 @@ public class BloodDonationAppointment {
                 ", Start Time: " + this.startTime + ", End Time: " + this.endTime + ", Blood type: " + this.bloodType
                 + ", First-time donor: " + this.firsttimeDonor + ", Donor ID: " + this.donorId;
     }
+
 }
