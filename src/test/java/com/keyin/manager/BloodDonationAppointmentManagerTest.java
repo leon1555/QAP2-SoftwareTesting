@@ -39,6 +39,10 @@ public class BloodDonationAppointmentManagerTest {
         AppointmentSlot appointmentSlot3 = new AppointmentSlot(3, "Billy Van's Totally Legit Clinic",
                 LocalDate.of(2021, Month.NOVEMBER, 29), LocalTime.of(11, 30), LocalTime.of(12, 00), "O negative");
 
+        appointmentSlots.add(appointmentSlot1);
+        appointmentSlots.add(appointmentSlot2);
+        appointmentSlots.add(appointmentSlot3);
+
         Mockito.when(mockDatabase.getAppointmentSlots()).thenReturn(appointmentSlots);
 
         BloodDonationAppointmentManager bloodDonationAppointmentManager =
