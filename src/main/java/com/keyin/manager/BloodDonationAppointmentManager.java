@@ -51,24 +51,32 @@ public class BloodDonationAppointmentManager {
 
         for (AppointmentSlot appointmentSlot: appointmentSlotList) {
             if (appointmentSlot.getBloodType().equalsIgnoreCase(bloodDonor.getBloodType())) {
-                if (((DAYS.between(bloodDonor.getLastDonationDate(), appointmentSlot.getDate())) >= 56
-                        && (DAYS.between(bloodDonor.getLastDonationDate(), appointmentSlot.getDate())) <= 365)
-                        || (bloodDonationAppointment.isFirsttimeDonor())) {
+                if(bloodDonationAppointment.isFirsttimeDonor()) {
                     bloodDonationAppointment.setLocation(appointmentSlot.getLocation());
                     bloodDonationAppointment.setDate(appointmentSlot.getDate());
                     bloodDonationAppointment.setStartTime((appointmentSlot.getStartTime()));
                     bloodDonationAppointment.setEndTime((appointmentSlot.getEndTime()));
                     bloodDonationAppointment.setId("MOCK-APPOINTMENT-123");
+                    break;
+                } else if (((DAYS.between(bloodDonor.getLastDonationDate(), appointmentSlot.getDate())) >= 56
+                        && (DAYS.between(bloodDonor.getLastDonationDate(), appointmentSlot.getDate())) <= 365)) {
+                    bloodDonationAppointment.setLocation(appointmentSlot.getLocation());
+                    bloodDonationAppointment.setDate(appointmentSlot.getDate());
+                    bloodDonationAppointment.setStartTime((appointmentSlot.getStartTime()));
+                    bloodDonationAppointment.setEndTime((appointmentSlot.getEndTime()));
+                    bloodDonationAppointment.setId("MOCK-APPOINTMENT-123");
+                    break;
                 } else if (DAYS.between(bloodDonor.getLastDonationDate(), appointmentSlot.getDate()) < 56) {
                     throw new InvalidDonationSchedulingException(("Donor must wait at least 56 days until next donation."));
                 } else {
                     throw new InvalidDonationSchedulingException(("Last donation was over a year ago."));
                 }
             }
-            if (bloodDonationAppointment.getStartTime() == null) {
-                System.out.println(bloodDonationAppointment);
-                throw new InvalidDonationSchedulingException("No appointments available for this blood type.");
-            }
+
+        }
+        if (bloodDonationAppointment.getStartTime() == null) {
+            System.out.println(bloodDonationAppointment);
+            throw new InvalidDonationSchedulingException("No appointments available for this blood type.");
         }
 
         return bloodDonationAppointment;

@@ -49,7 +49,6 @@ public class BloodDonationAppointmentManagerTest {
                 new BloodDonationAppointmentManager(mockDatabase);
 
         BloodDonationAppointment bloodDonationAppointment = bloodDonationAppointmentManager.bookAppointment(1);
-//        Assertions.assertEquals(bloodDonationAppointment.getDate(), appointmentSlot2.getDate());
 
 
     }
@@ -126,7 +125,7 @@ public class BloodDonationAppointmentManagerTest {
     @Test
     public void testBloodDonorInvalidType() {
         BloodDonor bloodDonorInValidBloodType = new BloodDonor(137, "Count", "Frightenstein",
-                LocalDate.of(1770, Month.OCTOBER, 31), "Bat Blood");
+                LocalDate.of(1970, Month.OCTOBER, 31), "Bat Blood");
 
         Mockito.when(mockDatabase.getDonor(137)).thenReturn(
                 bloodDonorInValidBloodType
@@ -154,6 +153,5 @@ public class BloodDonationAppointmentManagerTest {
             Assertions.assertTrue(e.getMessage().equals("No appointments available for this blood type."));
         }
 
-//        Assertions.fail("Did not hit expected Exception!");
     }
 }
