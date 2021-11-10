@@ -1,0 +1,5 @@
+1. 4-5 hours
+2. Lectures, some websites for dealing with dates and date manipulation in Java
+3. No
+4. Yes, I asked Jamie several questions.
+5. This was a challenging QAP, but I feel confident with the key concepts and could solve similar problems.
