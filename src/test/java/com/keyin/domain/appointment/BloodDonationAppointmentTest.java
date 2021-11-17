@@ -1,7 +1,5 @@
 package com.keyin.domain.appointment;
 
-import com.keyin.domain.appointment.AppointmentSlot;
-import com.keyin.domain.appointment.BloodDonationAppointment;
 import com.keyin.domain.donor.BloodDonor;
 import org.junit.jupiter.api.Test;
 
